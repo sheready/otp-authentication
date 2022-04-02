@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from users.forms import UserCreationForm, VerifyForm
+from users.forms import UserCreationForm, VerifyForm, ResendCodeForm
 from . import verify
+from django.contrib.auth import authenticate, login
 from users.decorators import verification_required
+from django.contrib import messages
+
 # Create your views here.
 
 @login_required
@@ -32,5 +35,21 @@ def verify_code(request):
                 request.user.save()
                 return redirect('users:index')
     else:
+
         form = VerifyForm()
     return render(request, 'verify.html', {'form': form})
+
+@login_required
+def resend_code(request):
+    if request.method == 'POST':
+        form = ResendCodeForm(request.POST)
+        if form.is_valid():
+            phone = form.cleaned_data.get('phone')
+            if request.user.phone == phone:
+                verify.send(phone)
+            return redirect('users:verify')
+    else:
+        form = ResendCodeForm()
+    return render(request, 'resend.html', {'form':form})
+    
+
