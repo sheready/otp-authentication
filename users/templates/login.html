@@ -5,12 +5,26 @@
 <div class="container d-flex align-items-center justify-content-center">
     <h1>Login here</h1>
 </div>
+<br>
+{% for message in messages %}
+    
+    <div class="alert alert-success">
+        <a class="close" href="#" data-dismiss="alert"></a>
+           {{ message }}
+    </div>
+
+{% endfor %}
+<br>
 <div class="container d-flex align-items-center justify-content-center">
     <form method="post">
         {% csrf_token %}
         {{ form|crispy }}
+        <br>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
+</div>
+<br>
+<div class="container d-flex align-items-center justify-content-center">
     <p>Don't have an account? <a href="{% url 'users:register' %}">Register</a></p>
 </div>
 
