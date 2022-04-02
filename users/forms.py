@@ -8,3 +8,6 @@ class UserCreationForm(BaseUserCreationForm):
     class Meta:
         model = User
         fields = ('username','phone','password1','password2')
+
+class VerifyForm(forms.Form):
+    code = forms.CharField(max_length=8, required=True, help_text='Enter OTP Code')
