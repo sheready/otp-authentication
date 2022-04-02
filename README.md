@@ -20,4 +20,4 @@
 ![Verified page](images/verified.png)
 
 ##### otp code page
-![otp page](images/otp.png)
+![otp page](images/otp.jpeg)
