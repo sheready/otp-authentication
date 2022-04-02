@@ -9,5 +9,9 @@ class UserCreationForm(BaseUserCreationForm):
         model = User
         fields = ('username','phone','password1','password2')
 
+
 class VerifyForm(forms.Form):
     code = forms.CharField(max_length=8, required=True, help_text='Enter OTP Code')
+
+class ResendCodeForm(forms.Form):
+    phone = forms.CharField(max_length=20, required=True, help_text='Insert same Phone number used to register account')
