@@ -18,3 +18,6 @@
 
 ##### Verified page
 ![Verified page](images/verified.png)
+
+##### otp code page
+![otp page](images/otp.png)
