@@ -2,7 +2,7 @@
 
 ##### This is a django login and registration web application that uses twilio to send OTP code to verify users before giving them access to the mail page
 
-##### This webpage is hosted on heroku. Link [OTP-AUTHENTICATION](django-insecure-i&ub&d0%g#ld)&$70z4ans0vbu=@d=b)(92%x=)h&+1x1dueej)
+##### This webpage is hosted on heroku. Link [OTP-AUTHENTICATION](https://otp-auth-app.herokuapp.com/)
 
 ##### These are the screenshots to the webpages and flow of the app
 
